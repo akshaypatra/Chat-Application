@@ -37,10 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangorestframework',
     'rest_framework',
     'channels',
-    'channel-redis',
     'accounts',
 ]
 
@@ -55,6 +53,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'chat_app_backend.urls'
+
+AUTH_USER_MODEL="accounts.User"
 
 TEMPLATES = [
     {
