@@ -26,6 +26,22 @@ Note:  After activating , use pip3 to install packages
 -> pip3 freeze > requirements.txt
 
 
+## FOR FRONTEND :
+
+- To start the app 
+ -> npm start
+
+ INSTALLATIONS (FOR users :   npm i dependencies   (it will install all the packages)) :
+
+ + using material UI
+ ->  npm install @mui/material @emotion/react @emotion/styled
+
+ + using Bootstrap for components
+ -> npm i bootstrap@5.3.3
+
+ + axios for api requests
+ -> npm i axios
+
 
 
 
