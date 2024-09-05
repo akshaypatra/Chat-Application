@@ -56,6 +56,12 @@ ROOT_URLCONF = 'chat_app_backend.urls'
 
 AUTH_USER_MODEL="accounts.User"
 
+REST_FRAMEWORK ={
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'accounts.tokenauthentication.JWTAuthentication'
+    ]
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

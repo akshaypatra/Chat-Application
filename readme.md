@@ -20,6 +20,7 @@ Note:  After activating , use pip3 to install packages
 1.djangorestframework
 2.channels
 3.channels-redis
+4.pyjwt
 
 
 4.to update requirements.txt  :
