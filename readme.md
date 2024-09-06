@@ -21,6 +21,7 @@ Note:  After activating , use pip3 to install packages
 2.channels
 3.channels-redis
 4.pyjwt
+5.django-cors-headers
 
 
 4.to update requirements.txt  :
