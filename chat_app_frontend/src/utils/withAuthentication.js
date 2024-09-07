@@ -1,22 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom';
 
-const withAuthentication=(wrappedComponent)=>{
+const WithAuthentication=(WrappedComponent)=>{
     return function AuthComponent(props){
-        const [isAutheticated,setIsAuthenticated]=useState(false);
+        const [isAuthenticated,setIsAuthenticated]=useState(false);
+
+
+        const getAuthTokenFromCookie = () => {
+            const cookies = document.cookie.split(';');
+            
+            for (const cookie of cookies) { // Use for...of to iterate through the array
+              const [name, value] = cookie.trim().split('=');
+              if (name === 'token') {
+                return value;
+              }
+            }
+            return null;
+          };
 
         useEffect(()=>{
-            const token=document.cookie.split('; ').find(row=> row.startsWith('token='))
-            if(token){
+            const authToken=getAuthTokenFromCookie()
+            if(authToken){
                 setIsAuthenticated(true);
             }
             else{
                 setIsAuthenticated(false);
             }
         },[]);
+        
 
-        if(isAutheticated){
-            return <wrappedComponent {...props}/>
+        if(isAuthenticated){
+            return <WrappedComponent {...props}/>
 
         }else{
             return <Navigate to="/login/"/>
@@ -25,4 +39,4 @@ const withAuthentication=(wrappedComponent)=>{
 }
 
 
-export default withAuthentication;
+export default WithAuthentication;

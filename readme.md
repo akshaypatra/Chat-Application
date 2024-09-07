@@ -29,6 +29,36 @@ Note:  After activating , use pip3 to install packages
 -> pip3 freeze > requirements.txt
 
 
+#to install and run redis
+->brew install redis
+->brew services start redis
+
+to check 
+->redis-cli ping
+
+to stop
+->brew services stop redis
+
+to run manually
+->redis-server
+
+
+
+## WEBSOCKET Testing
+
+To check websocke is working or not
+go to websocketking and 
+put this 
+->  ws://127.0.0.1:8000/ws/chat/2/?token=  {authtoken}  
+
+
+add this to send a message
+{
+    "message":"websocket test"
+}
+
+
+
 ## FOR FRONTEND :
 
 - To start the app 

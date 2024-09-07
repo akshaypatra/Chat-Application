@@ -1,14 +1,14 @@
 import React from 'react'
 import Message from './Message'
 import MessageInput from './MessageInput'
-import withAuthentication from '../utils/withAuthentication'
+//import WithAuthentication from '../utils/WithAuthentication'
 
 
  function Chatarea() {
   return (
     <div className='chat-area'>
         
-        <div className='chat-header'></div>
+        <div className='chat-header'>Chat header</div>
         <div className='messages'>
             <Message text="Hey,How its going" sent/>
             <Message text="I am good" recieved/>
@@ -18,4 +18,5 @@ import withAuthentication from '../utils/withAuthentication'
   )
 }
 
-export default withAuthentication(Chatarea);
+// export default WithAuthentication(Chatarea);
+export default Chatarea;
