@@ -22,6 +22,7 @@ Note:  After activating , use pip3 to install packages
 3.channels-redis
 4.pyjwt
 5.django-cors-headers
+6.daphne
 
 
 4.to update requirements.txt  :
