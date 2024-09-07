@@ -6,6 +6,8 @@ export default function Navigate() {
         <Link to='/register'>Register</Link>
         <br></br>
         <Link to='/login'>Login</Link>
+        <br></br>
+        <Link to='/chat'>Chat</Link>
     </div>
   )
 }

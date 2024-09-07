@@ -1,9 +1,10 @@
 import React from 'react'
 import Message from './Message'
 import MessageInput from './MessageInput'
+import withAuthentication from '../utils/withAuthentication'
 
 
-export default function Chatarea() {
+ function Chatarea() {
   return (
     <div className='chat-area'>
         
@@ -16,3 +17,5 @@ export default function Chatarea() {
     </div>
   )
 }
+
+export default withAuthentication(Chatarea);

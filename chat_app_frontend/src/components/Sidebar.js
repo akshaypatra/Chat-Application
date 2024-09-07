@@ -1,7 +1,10 @@
 import React from 'react'
+import withAuthentication from '../utils/withAuthentication'
 
-export default function Sidebar() {
+function Sidebar() {
   return (
     <div className='side-bar'>Sidebar</div>
   )
 }
+
+export default withAuthentication(Sidebar)
