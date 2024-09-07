@@ -19,7 +19,8 @@ class JWTAuthentication(BaseAuthentication):
 
             user_id=payload['id']
             user=User.objects.get(id=user_id)
-            return user
+            return (user, token)
+        
         except(InvalidTokenError,ExpiredSignatureError,User.DoesNotExist):
             raise AuthenticationFailed("Invalid Token")
 
@@ -29,8 +30,9 @@ class JWTAuthentication(BaseAuthentication):
             raise InvalidTokenError("Token has no expiration")
 
         exp_timestamp =payload['exp']
-        current_timestamp=datetime.now().timestamp
-        if current_timestamp >exp_timestamp:
+        current_timestamp=datetime.now().timestamp()
+
+        if current_timestamp > exp_timestamp:
             raise ExpiredSignatureError("Token has expired")
 
 
